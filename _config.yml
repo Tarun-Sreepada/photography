@@ -1,14 +1,12 @@
 # Base configs
 baseurl: "https://tarun-sreepada.github.io/photography"
-# baseurl: "" # Comment the above line and uncomment this to test the website locally
 image_fulls_loc: "/images/fulls"
 image_thumbs_loc: "/images/thumbs"
-google_analytics: "UA-46465113-2"
 
 # UI configs
 title: "Photography by Tarun Sreepada"
 subtitle: "A photography portfolio site"
-author: "Tarun Sreepada
+author: "Tarun Sreepada"
 header:
  title: "Photography"
  subtitle: "by Tarun Sreepada"
