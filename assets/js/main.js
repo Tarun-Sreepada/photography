@@ -209,13 +209,19 @@
 	  caption: function ($a) {
 		var $image_img = $a.children('img');
 		var data = exifDatas[$image_img.data('name')];
+		var aiCaption = $image_img.data('caption');
 		if (data === undefined) {
 			// EXIF data					
 			EXIF.getData($image_img[0], function () {
 				data = exifDatas[$image_img.data('name')] = getExifDataMarkup(this);
 			});
 		}
-		return data !== undefined ? '<p>' + data + '</p>' : ' ';
+		
+		var content = '';
+		if (aiCaption) content += '<p style="font-weight: bold; margin-bottom: 0.5em;">' + aiCaption + '</p>';
+		if (data !== undefined) content += '<p>' + data + '</p>';
+		
+		return content || ' ';
 	},
 	  fadeSpeed: 300,
 	  onPopupClose: function () {
