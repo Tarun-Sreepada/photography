@@ -2,7 +2,7 @@ import os
 from PIL import Image
 
 thumbs_dir = os.path.join('images', 'thumbs')
-quality = 50  # Compression quality (0-100)
+quality = 99  # Compression quality (0-100)
 
 success_count = 0
 skip_count = 0
@@ -17,6 +17,7 @@ for filename in os.listdir(thumbs_dir):
         continue
         
     lower_name = filename.lower()
+    print(f"Processing: {filename}...")
     if lower_name.endswith(('.jpg', '.jpeg', '.png')):
         try:
             with Image.open(full_path) as img:
