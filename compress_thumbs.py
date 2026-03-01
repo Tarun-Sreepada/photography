@@ -30,6 +30,11 @@ for filename in os.listdir(thumbs_dir):
                 if exif_data:
                     save_kwargs['exif'] = exif_data
 
+                # reduce resolution by 75%
+                new_width = img.width // 4
+                new_height = img.height // 4
+                img = img.resize((new_width, new_height), Image.LANCZOS)
+
                 
                 img.save(full_path, **save_kwargs)
 
